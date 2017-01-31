@@ -1,0 +1,34 @@
+body { margin: 0; padding: 0; }
+
+#chat-history-container { position: fixed; width: 95vw;  max-height: 95vh; margin: auto; top:0;bottom:0; left:0;right:0; }
+
+/* 16/9 = 1.778, 95/1.778 = 53.43 */
+#chat-history-container.ratio-16x9 { height: 53.43vw; max-width: 177.78vh; }
+
+#chat-history { position: relative; width: 100%; height: 100%; }
+
+#chat-history .dot { width: 4px; height: 4px; border-radius: 50%; position: absolute; background: black; transition: filter 3.5s linear; }
+#chat-history .dot.sent { background: white; }
+/*#chat-history .down { -webkit-filter: blur(3px); -moz-filter: blur(3px); -ms-filter: blur(3px); filter: blur(3px); top: 120vh !important; }*/
+
+#indicator { position: fixed; background: white; border-radius: 50%; width: 35px;  height: 35px;  right: 20px; top: 20px; }
+#indicator.receiving { border: dashed 1px black; background: transparent; animation: receiving 2.5s linear infinite; }
+
+#drawer { display: none; width: 15px; height: 15px; border-radius: 50%; position: fixed; border: dashed 1px black; }
+
+.recording #indicator { border: none; background-color: rgb(255, 75, 30); animation: recording 2s linear infinite alternate; }
+.recording #drawer { background-color: white; border: none; display: block; }
+
+.drawn #drawer { display: block; }
+
+@keyframes recording { 
+	from { box-shadow: rgb(255, 75, 30) 0 0 0px; transform: scale(1) }
+	to { box-shadow: rgb(255, 75, 30) 0 0 15px; transform: scale(0.75) }
+}
+@keyframes receiving { 
+	from { transform: rotate(0deg); }
+	to { transform: rotate(359deg); }
+}
+
+
+

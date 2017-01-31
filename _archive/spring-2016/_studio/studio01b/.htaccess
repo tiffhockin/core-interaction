@@ -1,0 +1,30 @@
+# Use PHP5.4 as default
+# AddHandler application/x-httpd-php54 .php
+
+# enable directory views
+Options +Indexes
+
+# protect this file
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+ order allow,deny
+ deny from all
+</Files>
+
+# customize some stuff
+<IfModule mod_autoindex.c>
+	
+	IndexOptions IgnoreCase
+
+	IndexOptions FancyIndexing FoldersFirst HTMLTable SuppressLastModified SuppressDescription SuppressHTMLPreamble SuppressRules SuppressSize NameWidth=*
+
+	# display order
+	IndexOrderDefault Ascending Name
+
+	# header & footer
+	HeaderName /ignore/header-interior.html
+	ReadmeName /ignore/footer-interior.html
+
+	# ignore these files
+	IndexIgnore ignore 400.shtml 401.shtml 403.shtml 404.shtml 500.php 500.shtml cgi-bin favicon.ico .htaccess .ftpquota .DS_Store icons *.log *,v *,t .??* *~ *#
+
+</IfModule>

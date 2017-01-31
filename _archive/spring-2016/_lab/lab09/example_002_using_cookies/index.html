@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Chat - Undesigned Example</title>
+
+        <meta charset="utf-8">
+        
+        <link href='./css/reset.css' media='all' rel='stylesheet' type='text/css' />
+        
+        <!-- jQuery -->
+        <script src='./js/jquery-2.1.1.min.js' type='text/javascript'></script>
+
+        <!-- jQuery cookie library !! Important !! -->
+        <script src='./js/jquery.cookie.js' type='text/javascript'></script>
+        
+        <!-- your code goes here a.k.a. this is the only file you'll edit -->
+        <script src='./js/main.js' type='text/javascript'></script>
+        
+        <!-- actual chat application a.k.a. don't edit this -->
+        <script src='./js/ClassChat.js' type='text/javascript'></script>
+
+        <!-- tools, helpers, etc. -->
+        <script src='./js/plugins.js' type='text/javascript'></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- 
+            chat program looks for #chat-history  
+            then appends all chat history to #chat-history div
+            -->
+            <div id="chat-history">
+            </div>
+        
+            <!-- this is what we package up and send to the server -->
+            <form id="chat-input-wrapper">
+
+                <!-- where username goes -->
+                <input type="text" class="chat-username" placeholder="enter username..." />
+            
+                <!-- where the message goes -->
+                <input type="text" class="chat-input" placeholder="enter text..." />
+            
+                <!-- submit our message -->
+                <div class="chat-button">
+                    <p>send chat</p>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

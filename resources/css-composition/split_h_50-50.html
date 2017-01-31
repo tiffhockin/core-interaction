@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>50-50 H Split</title>
+
+	<style type="text/css">
+
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.stacked-vertically {
+		position: absolute;
+		height: 50%;
+		width: 100%;
+	}
+
+	#top {
+		top: 0;
+		background-color: rgb(255, 255, 50);
+	}
+
+	#bottom {
+		bottom: 0;
+		background-color: rgb(22,116,255);
+	}
+
+	</style>
+
+</head>
+<body>
+
+	<div id="top" class="stacked-vertically one-half"></div>
+	<div id="bottom" class="stacked-vertically one-half"></div>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+// Header & Nav settings
+$header_args = array(
+		'show_banner' => false,
+		'back_link' => true,
+		'alt_link' => array(
+				'link_text' => 'Text',
+				// anchor or URL
+				'link_url' => '#anchor',
+				// true if anchor, false if URL
+				'jump_link' => true
+			),
+		'show_nav' => true,
+		'home_page' => true
+	);

@@ -1,0 +1,35 @@
+html, body { width: 100%; height: 100%; }
+
+body {
+	font-size: 22px;
+	line-height: 1.15;
+}
+
+p {
+	margin: 0 auto 1em;
+	padding: 0 20%;
+}
+
+.keypress { background-color: blue; }
+.keypress p { color: white; }
+
+.keyup { background-color: gold; }
+.keyup p { color: red; }
+
+#left, #right, #space { 
+	position: fixed; 
+	display: none;
+	height: 100%;
+	width: 5%;
+	top: 0;
+	bottom: 0;
+	background-color: white;
+}
+
+#left { left: 0; }
+#right { right: 0; }
+#space { left: 47.5%; }
+
+.left #left { display: block; }
+.right #right { display: block; }
+.space #space { display: block; }

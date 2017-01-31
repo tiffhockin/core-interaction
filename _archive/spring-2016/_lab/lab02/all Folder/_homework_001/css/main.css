@@ -1,0 +1,50 @@
+/* GLOBAL */
+html, body { width: 100%; height: 100%; background-color: #D3D3D3;  }
+
+@font-face { font-family: "avenirnextbold"; src: url("../fonts/avenir.next.bold.ttf"); }
+
+/* WRAPPER */
+#wrapper { padding-top: 20px; width: 100%; min-width: 840px; }
+
+h1, h2 { font-family: "avenirnextbold"; font-weight: normal; text-align: center; }
+
+h1 { font-size: 36px; margin-bottom: 30px; }
+h2 { font-size: 20px; margin-bottom: 20px; }
+
+/* HEADER */
+#header { margin-bottom: 40px; }
+#header p { text-align: center; }
+#header a { font: normal 36px "avenirnextbold"; color: #719A72; }
+#header a:hover { text-decoration: underline; }
+
+/* MAIN */
+#main {  }
+
+.columns {  }
+
+.left { }
+.right {  }
+
+ul { width: 420px; margin: 0 auto; }
+ul li { list-style: none; text-align: center; margin-bottom: 20px; }
+
+ul li .dog { width: 200px; margin: 0 auto; }
+ul li .dog-image {
+	width: 200px;
+	height: 200px;
+	border: 2px solid rgba( 0, 255, 0, .3);
+	background: url("") center center no-repeat;
+	background-size: cover;
+}
+ul li .dog:hover .dog-image {
+	border-color: black;
+	cursor: pointer;
+}
+ul li .dog:hover p { color: green; }
+
+ul li .one { background-image: url("../img/img001.gif"); }
+ul li .two { background-image: url("../img/img002.gif"); }
+ul li .three { background-image: url("../img/img003.gif"); }
+ul li .four { background-image: url("../img/img004.gif"); }
+ul li p { text-align: center; font: normal 12px "avenirnextbold"; }
+

@@ -1,0 +1,7 @@
+# customize some stuff
+<IfModule mod_autoindex.c>
+	
+	# display order
+	IndexOrderDefault Ascending Name
+
+</IfModule>

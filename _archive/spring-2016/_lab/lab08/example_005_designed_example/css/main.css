@@ -1,0 +1,88 @@
+html, body { width: 100%; height: 100%; }
+
+@font-face { font-family: "brownstdlight"; src: url("../fonts/brown.std.light.otf"); }
+@font-face { font-family: "brownstdreg"; src: url("../fonts/brown.std.regular.otf"); }
+@font-face { font-family: "brownstdbold"; src: url("../fonts/brown.std.bold.otf"); }
+
+#wrapper {
+	width: 100%;
+	height: 100%;
+
+	position: relative;
+}
+
+#chat-history {
+	background-color: #e6e6e6;
+	
+	width: 100%;
+	height: calc(100% - 100px);
+
+	overflow-y: scroll;
+}
+#chat-history p {
+	font: normal 18px "brownstdbold";
+	margin-bottom: 5px;
+}
+
+#chat-input-wrapper {
+	height: 100px;
+	position: fixed;
+	width: 100%;
+	bottom: 0px;
+	left:0px;
+}
+
+#chat-input-wrapper .chat-username {
+	font: normal 20px "brownstdbold";
+
+	position: absolute;
+	bottom: 50px;
+	left: 0px;
+	width: 20%;
+	height: 50px;
+
+	padding-left: 10px;
+	outline: none;
+
+	border: 1px solid black;
+	border-width: 1px 0px 0px 1px;
+}
+
+#chat-input-wrapper .chat-input {
+	font: normal 20px "brownstdbold";
+
+	position: absolute;
+	bottom: 50px;
+	right: 0px;
+	width: 80%;
+	height: 50px;
+
+	padding-left: 10px;
+	outline: none;
+
+	border: 1px solid black;
+	border-width: 1px 1px 0px 1px;
+}
+
+#chat-input-wrapper .chat-button {
+	cursor: pointer;
+
+	background-color: white;
+
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 50px;
+
+	padding-top: 10px;
+
+	border: 1px solid black;
+}
+#chat-input-wrapper .chat-button:hover { background: black; }
+#chat-input-wrapper .chat-button:hover p { color: white; }
+
+#chat-input-wrapper .chat-button p {
+	font: normal 20px "brownstdbold";
+	text-align: center;
+}

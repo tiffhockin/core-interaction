@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="robots" content="noindex,nofollow">
+	<title>CSS Layout Basics</title>
+	<link rel="icon" type="image/png" href="../icon.png">
+
+<style type="text/css">
+	
+	* {
+		box-sizing: border-box;
+	}
+
+	body,
+	button {
+		font-family: sans-serif;
+		font-size: 14pt;
+		line-height: 1.3;
+	}
+	button {
+		background-color: rgb(0,90,255);
+		border: outset 5px rgb(0,90,255);
+		color: white;
+		cursor: pointer;
+		display: block;
+		margin-top: 0.5em;
+		text-transform: capitalize;
+	}
+	button:focus {
+		outline: none;
+	}
+	button:active {
+		border: inset 5px rgb(0,90,255);
+	}
+	button.on {
+		background-color: rgb(250,250,250);
+		border: inset 5px rgb(250,250,250);
+		color: black;
+	}
+	.button-anchor {
+		position: absolute;
+		margin-top: -100px;
+		width: 100%;
+	}
+	a:link {
+		border-bottom: solid 1px;
+		color: black;
+		text-decoration: none;
+	}
+	a:visited {
+		color: black;
+	}
+	a:hover {
+		border: none;
+	}
+	a:active {
+		border: none;
+	}
+
+	*[class*="-examples"] {
+		padding: 4px 8px;
+	}
+	hr {
+		border: none;
+		border-top: solid 2px #000;
+		margin-top: 2em;
+	}
+
+	.container {
+		border: dashed 1px #000;
+		margin: 10px 0;
+		padding: 10px;
+	}
+
+	#box-model {
+		background-color: rgb(180,255,190);
+		border: solid 2px #000;
+		box-sizing: content-box;
+		padding: 20px;
+		width: 200px;
+	}
+
+	.position-examples {
+		background-color: rgb(255,130,140);
+	}
+	.position-examples.fixed {
+		bottom: 0;
+		right: 0;
+	}
+
+	.nested-position-examples {
+		background-color: rgba(210, 150, 255, 0.3);
+		border: dotted 1px #000;
+		padding: 0;
+	}
+	#nested-divs-container {
+		height: 350px;	
+		padding:30px;	
+	}
+
+	#nested-divs-container .relative {
+		height: 100%;
+	}
+
+	#nested-divs-container .absolute {
+		height: 70%;
+		width: 90%;
+		top: 15%;
+		left: 5%;
+	}
+	#fixed-div .show-on-active,
+	#fixed-div.active .hide-on-active { display: none; }
+
+	#fixed-div.active .show-on-active,
+	#fixed-div .hide-on-active { display: inline; }
+
+	.fixed    { position: fixed; z-index: 5; }
+	.absolute { position: absolute; }
+	.relative { position: relative; }
+
+	.float-examples {
+		background-color: rgb(150,245,245);
+		margin: 2px;
+	}
+	.float-examples.clear {
+		background-color: transparent;
+		border: solid 1px #000;
+	}
+	.float-left  { float: left; }
+	.float-right { float: right; }
+	.clear { clear: both; }
+
+	.display-examples {
+		background-color: rgb(255,255,150);
+		border: solid 1px black;
+		margin: 2px;
+	}
+	.display-examples.inline-block {
+		max-width: 350px;
+	}
+	.inline { display: inline; }
+	.inline-block { display: inline-block; }
+	.block { display: block; }
+
+	#z-index-container {
+		height: 232px;
+	}
+	.z-index-examples {
+		background-color: rgb(100,155,255);
+		border: solid 1px #000;
+		width: 150px;
+		height: 150px;
+	}
+	.foreground   { z-index: 10; top: 70px; left: 70px; }
+	.middleground { z-index: 5; top: 40px; left: 40px; } 
+	.background   { z-index: 0; }
+
+	#overflowed-image-container,
+	#vertically-scrolled-container.active {
+		height: 122px;
+	}
+
+	#feedback {
+		margin: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 50;
+	}
+	#feedback.notice {
+		background-color: rgb(30,30,30);
+		color: white;
+		padding: 10px;
+	}
+	#feedback a:link,
+	#feedback a:visited {
+		color: rgb(165, 255, 230);
+		text-transform: capitalize;
+		border-bottom: solid 1px rgb(165, 255, 230);
+	}
+	#feedback a:hover {
+		border: none;
+	}
+	#feedback span + span:before {
+		content: ',  ';
+		margin-right: 0.5em;
+	}
+
+</style>
+
+</head>
+<body id="body">
+
+<div id="feedback" class="fixed"></div>
+
+<h1>CSS Layout Basics</h1>
+
+<p>
+	A quick overview of basic CSS properties used for layout. For more in-depth explanations and demonstrations, refer to <a href="http://learnlayout.com/index.html" target="_blank">Learn CSS Layout</a>.
+</p>
+
+<p id="toc">
+	<a href="#section-defaults">Defaults</a><br>
+	<a href="#section-margins-and-padding">Margins & Padding</a><br>
+	<a href="#section-box-model">Box Model</a><br>
+	<a href="#section-float-no-clear">Float, No Clear</a><br>
+	<a href="#section-float-with-clear">Float With Clear</a><br>
+	<a href="#section-display">Display</a><br>
+	<a href="#section-position">Position</a><br>
+	<a href="#section-nested-position">Nested Position</a><br>
+	<a href="#section-z-index">Z Index</a><br>
+	<a href="#section-overflow">Overflow</a>
+</p>
+
+
+<p></p>
+
+<hr id="section-defaults">
+<h1>Browser Defaults</h1>
+
+<p>
+	HTML stands for Hyper Text Markup Language. This means that, when we <em>mark up</em> our document in a certain way, the browser (Safari, Chrome, Firefox) knows how and where to apply certain styles. HTML has a default styling which usually involves type based on 12pt Times, ~8px margins and padding on the document body, etc.
+</p>
+<p>
+	Sometimes it's useful to <em>reset</em> the default states. There are <a href="http://tinyurl.com/lx47nmd" target="_blank">many ways</a> to reset browser default styling (and also many elements and properties to be reset). Here, we'll just talk about the body <b>margins</b> and <b>padding</b>, and about the <b>box model</b>.
+</p>
+
+<!-- MARGINS & PADDING -->
+<hr id="section-margins-and-padding">
+<h1>Margins & Padding</h1>
+
+<p>
+	By default, browsers adds a small margin or padding to the document body. There are times we want the document body to have different amounts or no extra space around it. To do this, we set the margins and padding on the body and html to 0:
+</p>
+
+<pre>
+	html,
+	body {
+	    margin: 0;
+	    padding: 0;
+	}
+</pre>
+
+<p>
+	Toggle the margins on this document: <br>
+	<button onclick="toggle('body','margin',0,this);">Toggle Body Margins</button>
+</p>
+
+
+<!-- BOX MODEL -->
+<hr id="section-box-model">
+<h1>Box Model</h1>
+
+<p>The box model is the way the browser calculates and renders the width of an element. This means: content + padding + border.</p>
+
+<p><img src="boxdim.png"></p>
+
+<p>
+	By default, the browser will <em>add</em> padding and borders to the overall size of an element. If you have a div with a width of 200px, 20px padding, and a 2px border, that div will actually have a total width of 244px:
+</p>
+
+<pre>
+	L border (2px)
+	+ L padding (20px)
+	+ content (200px)
+	+ R padding (20px)
+	+ R border (2px)
+	__________________
+	TOTAL = 244px
+</pre>
+
+<p>
+	Not very intuitive. We can change the way these are added up by specifying which box model to use. We do this by setting the <b>box sizing</b> property on all elements using the universal CSS selector, like this:
+</p>
+
+<pre>
+	* {
+	    box-sizing: border-box;
+	}
+</pre>
+
+<p>
+	This tells the browser that we want the width of our element to be the sum of all its properties: content + padding + border = width. Now, the size of our element will be calculated backwards from 200, like this:
+</p>
+
+<pre>
+	L border (2px)
+	+ L padding (20px)
+	+ content (156px)
+	+ R padding (20px)
+	+ R border (2px)
+	__________________
+	TOTAL = 200px
+</pre>
+
+<p>
+	Toggle the box sizing used on this div to see the difference between default box sizing and border-box:<br>
+	<button onclick="toggle('box-model','box-sizing','border-box',this);">Toggle Box Sizing</button>
+</p>
+
+<div id="box-model"><b>This div is 200px wide, has 20px padding and a 2px border</b></div>
+
+
+<!-- FLOAT, NO CLEAR -->
+<hr id="section-float-no-clear">
+<h1>Float, No Clear</h1>
+
+<p>
+	Elements with float <b>left</b> or <b>right</b> will "float" towards the upper left– or right-hand corner of their container. Non-floated elements that follow floated elements will also float upwards. Floated elements are not visibly held by their containers. Even the title and horizontal rule below are disrupted by these floated elements.
+</p>
+
+<pre>
+	.float-left {
+	    float: left;
+	}
+	.float-right {
+	    float: right;
+	}
+</pre>
+
+<div class="container">
+	<div class="float-examples float-left">
+		<b>1. This div is floated to the left.</b>
+	</div>
+	<div class="float-examples float-left">
+		<b>2. This div is floated to the left.</b>
+	</div>
+	<div class="float-examples float-left">
+		<b>3. This div is floated to the left.</b>
+	</div>
+	<div class="float-examples float-right">
+		<b>4. This div is floated to the right.</b>
+	</div>
+	<div class="float-examples float-right">
+		<b>5. This div is floated to the right.</b>
+	</div>
+	<div class="float-examples float-right">
+		<b>6. This div is floated to the right.</b>
+	</div>
+</div>
+
+<hr>
+<h1>Some Un-cleared Content</h1>
+
+<span class="clear"></span>
+
+<!-- FLOAT WITH CLEAR -->
+<hr id="section-float-with-clear">
+<h1>Float With Clear</h1>
+
+<p>
+	Clear acts like a "weight", holding down the bottom edge of the container.
+</p>
+
+<pre>
+	.clear {
+	    clear: both;
+	}
+</pre>
+
+<div class="container">
+	<div class="float-examples float-left">
+		<b>1. This div is floated to the left.</b>
+	</div>
+	<div class="float-examples float-left">
+		<b>2. This div is floated to the left.</b>
+	</div>
+	<div class="float-examples float-left">
+		<b>3. This div is floated to the left.</b>
+	</div>
+	<div class="float-examples float-right">
+		<b>4. This div is floated to the right.</b>
+	</div>
+	<div class="float-examples float-right">
+		<b>5. This div is floated to the right.</b>
+	</div>
+	<div class="float-examples float-right">
+		<b>6. This div is floated to the right.</b>
+	</div>
+	<div class="float-examples clear">
+		<b>This div is clearing both floats (left and right).</b>
+	</div>
+</div>
+
+
+<!-- DISPLAY -->
+<hr id="section-display">
+<h1>Display</h1>
+
+<p>
+	Different elements <b>display</b> differently. By default, most elements either display as <b>blocks</b> or <b>inline</b>. For example: paragraph tags display as blocks, spans inside the paragraphs display inline.
+</p>
+<p>
+	The main difference to note between <b>display:inline</b> and <b>float:left</b> is that elements set to display inline will <em>wrap</em> to a new line, like words do, along a shared baseline. Block-level elements (such as divs, paragraphs and headers) with the float property will maintain their box-like shape while floating to the left or right.
+</p>
+
+<p class="display-examples"><b>This is a paragraph.</b> By default, paragraphs, headers, and divs display as blocks.</p>
+
+<p>
+	<span id="default-span" class="display-examples"><b>This is a default span tag.</b> By default, span tags, images, and links display <b>inline</b>. The important thing to note about inline is that it means things will sit along a shared <em>baseline</em>. Toggle the display of this span between <b>inline</b> (default) and <b>block</b>:</span>
+	<button onclick="toggle('default-span','display','block',this);">Toggle Display</button>
+</p>
+
+<p>You can change the way an element is displayed by using the <b>display</b> property:</p>
+
+<span class="display-examples block"><b>This span is displayed as a block.</b></span>
+
+<div class="container">
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+	<span class="display-examples inline-block"><b>This span is displayed as an inline-block.</b> Note: text will wrap <em>within</em> this span rather than causing the span itself to wrap, as it does by default, above.</span>
+	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+</div>
+
+<div class="display-examples">
+		<b>This is a default div.</b>
+	</div>
+
+<p>
+	<div class="display-examples inline">
+		<b>This div is displayed inline.</b>
+	</div>
+	<div class="display-examples inline">
+		<b>This div is displayed inline.</b>
+	</div>
+	<div class="display-examples inline">
+		<b>This div is displayed inline.</b>
+	</div>
+	<div class="display-examples inline">
+		<b>This div is displayed inline.</b>
+	</div>
+	<div class="display-examples inline">
+		<b>This div is displayed inline.</b>
+	</div>
+</p>
+
+
+<!-- POSITION -->
+<hr id="section-position">
+<h1>Position</h1>
+
+<p>
+	The CSS position property can be used to position elements with respect to the browser window or their containers.
+</p>
+
+<p>
+	<b>Fixed elements</b> stay put within the browser window. They do not scroll with content. <b>You must define the location of fixed elements within the window</b> in order for them to be visible. The div in the bottom right-hand corner has "bottom" and "right" properties with values of 0. "top", "right", "bottom", and "left" define an element's offset from the edges of the browser window:
+</p>
+
+<pre>
+	.fixed-div {
+	    position: fixed;
+	    bottom: 0;
+	    right: 0;
+	}
+</pre>
+
+<div class="container">
+Container with a static or <b>un-positioned</b> div.
+	<div id="static-div" class="position-examples">
+		<b>This div is unpositioned.</b> By default, all elements are <b>static</b>, or unpositioned. Toggle the top offset of this div to see how it responds:<br> 
+		<button onclick="toggle('static-div','top','40px',this)">Toggle Top Offset</button>
+	</div>
+</div>
+
+<div class="container">
+Container with a <b>relative</b> positioned div.
+	<div id="relative-div" class="position-examples relative">
+		<b>This div is relative.</b> At first glance, relative appears to behave much like the default state. The difference is that relative specifies the position of an element <em>relative</em> to the parent container. Toggle the top offset of this div to see how it responds:<br>
+		<button onclick="toggle('relative-div','top','40px',this)">Toggle Top Offset</button>
+	</div>
+</div>
+
+<div class="container">
+Container with a <b>fixed</b> position div. Toggle the positioning of the div below:
+<button onclick="toggle('fixed-div','position','static',this)">Toggle Position</button>
+	<div id="fixed-div" class="position-examples fixed">
+		<b class="hide-on-active">This div is fixed.</b>
+		<b class="show-on-active">This div is static.</b>
+	</div>
+</div>
+
+<div id="absolute-div-container" class="container">
+<b>Static</b> (unpositioned) container with an <b>absolute</b> positioned div inside of it. Toggle the top offset of the absolute div, then toggle the position of this div. Note what happens:<br>
+	<button onclick="toggle('absolute-div-container','position','relative',this)">Toggle Position</button>
+<p>
+	<b>Absolute</b> means that an element is positioned absolutely with respect to its immediate <em>positioned</em> container. If there is no positioned container, the absolute element will refer to the document body.
+</p>
+	<div id="absolute-div" class="position-examples absolute">
+		<b>This div is absolute.</b> Toggle the top offset of this div, then toggle the position of its container:<br>
+		<button onclick="toggle('absolute-div','top','100px',this)">Toggle Top Offset</button>
+	</div>
+</div>
+
+<p>
+	<br>
+	<br>
+	<br>
+</p>
+
+<!-- NESTED POSITION -->
+<hr id="section-nested-position">
+<h1>Nested Position</h1>
+
+<p>
+	By combining and nesting variously positioned elements, you can create more complex layouts. All 3 of the absolutely positioned divs share the same CSS properties:
+</p>
+
+<pre>
+	.absolute-divs {
+	    width: 90%;
+	    left: 5%;
+	    height: 70%;
+	    top: 15%;
+	}
+</pre>
+
+<p>
+	To create the composition below, you need to set the outer two containers' positions to relative. You also need to specify a height and/or width on the container. Toggle the height of the container to see what happens:<br>
+	<button onclick="toggle('nested-divs-container','height','auto',this)">Toggle Height</button>
+</p>
+
+<div id="nested-divs-container" class="nested-position-examples container relative">
+	<b class="absolute" style="top:5px;left:10px;">This div is relatively positioned with 30px padding and a height of 350px</b>
+	<div class="nested-position-examples relative">
+		<b>This div is relatively positioned with a height of 100%</b>
+
+		<div class="nested-position-examples absolute">	
+			<b>This div is absolutely positioned</b>
+
+			<div class="nested-position-examples absolute">	
+				<b>This div is absolutely positioned</b>
+
+				<div class="nested-position-examples absolute">	
+					<b>This div is absolutely positioned</b><br>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+<!-- Z-INDEX -->
+<hr id="section-z-index">
+<h1>Z Index</h1>
+
+<p>
+	The CSS <b>z-index</b> property allows you to position elements along the z-axis. In other words: you can stack elements on top of one another. Elements with a higher z-index are closer to the front.
+</p>
+
+<pre>
+	.foreground {
+	    z-index: 10;
+	}
+	.middleground {
+	    z-index: 5;
+	}
+	.background {
+	    z-index: 0;
+	}
+</pre>
+
+<div id="z-index-container" class="container relative">
+	<div class="z-index-examples absolute foreground">Foreground</div>
+	<div class="z-index-examples absolute middleground">Middleground</div>
+	<div id="background" class="z-index-examples absolute background">Background</div>
+</div>
+
+<p>
+	Toggle the z-index of the background div:<br>
+	<button onclick="toggle('background','z-index','20',this)">Toggle z-index</button>
+</p>
+
+
+<!-- OVERFLOW -->
+<hr id="section-overflow">
+<h1>Overflow</h1>
+
+<p>
+	Using the CSS overflow property, you can tell a container to hide or scroll any overflowed content. The overflow property is best used on elements with a specified width.
+</p>
+
+<pre>
+	.hide-overflow {
+	    overflow: hidden;
+	}
+	.scroll-vertically {
+	    overflow-y: scroll;
+	}
+	.scroll-horizontally {
+	    overflow-x: scroll;
+	}
+</pre>
+
+<p>
+	It's useful to define overflow handling on elements whose content spills out beyond the edges. Toggle the height and overflow handling of the container below:<br>
+	<button onclick="toggle('overflowed-container','height','100px',this)" style="display:inline-block;">Toggle Height</button>
+	<button onclick="toggle('vertically-scrolled-container','overflow-y','scroll',this)" style="display:inline-block;">Scroll Vertically</button>
+</p>
+
+<div id="vertically-scrolled-container" class="container">
+	<div id="overflowed-container">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+</div>
+
+<p>
+	You can use the overflow on any type of content. Toggle the overflow handling of the image container below:
+	<button onclick="toggle('overflowed-image-container','overflow','hidden',this)">Hide Overflow</button>
+</p>
+
+<div id="overflowed-image-container" class="container background">
+	<img src="https://media.giphy.com/media/142Y941q45XPdm/giphy.gif">
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<script type="text/javascript">
+	
+	var feedback = document.getElementById('feedback');
+
+	function toggle(element,property,value,trigger) {
+
+		var element = document.getElementById(element);
+		var statusSet = feedback.children;
+
+		if ( trigger.classList.contains('on') ) {
+
+			var status = document.getElementById(element.id+"-"+property+"-"+value);
+
+			element.setAttribute('style', "" );
+			element.classList.remove('active');
+
+			status.parentNode.removeChild(status);
+
+			trigger.classList.remove('on');
+
+			if ( statusSet.length == 0 ) {
+				feedback.classList.remove('notice');
+			}
+
+		} else {
+			
+			element.setAttribute('style', property+":"+value );
+			element.classList.add('active');
+
+			trigger.classList.add('on');
+			var triggerId = element.id+"-"+property+"-"+value+"-button";
+
+			if ( document.getElementById(element.id+"-"+property+"-"+value+"-button") == undefined ) {
+
+				var buttonAnchor = document.createElement('a');
+				buttonAnchor.id = triggerId;
+				buttonAnchor.className = 'button-anchor';
+				trigger.parentNode.insertBefore(buttonAnchor, trigger);
+
+			}
+
+			feedback.classList.add('notice');
+			feedback.innerHTML += "<span id='"+element.id+"-"+property+"-"+value+"'><a href='#"+triggerId+"'>"+element.id.replace(/-/g,' ')+ "</a> { " +property+": "+value+" }</span>";
+
+		}
+
+	}
+
+</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-54281483-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

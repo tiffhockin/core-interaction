@@ -1,0 +1,22 @@
+list top-level directories
+allow image flipper
+
+
+
+
+
+
+/*
+	- create admin folder
+	- index.php
+	- form with button
+	- submit form back to self
+	- check $_POST[] array in php to get the query params
+	- use PHP to "create a folder"
+		- http://php.net/manual/en/function.mkdir.php
+	- use PHP to "copy" files
+		- http://php.net/manual/en/function.copy.php
+	- use PHP to chmod/chown if neccessary
+		- http://php.net/manual/en/function.chmod.php
+	- redirect to that url to confirm
+*/

@@ -1,0 +1,14 @@
+html, body { width: 100%; height: 100%; }
+
+body {
+	font-size: 22px;
+	line-height: 1.15;
+}
+
+p {
+	margin: 0 auto 1em;
+	padding: 0 20%;
+}
+
+.scroll { background-color: lime; }
+.scroll div { transform: rotate(-10deg); }

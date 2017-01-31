@@ -1,0 +1,4 @@
+@font-face { font-family: "brownstdbold"; src: url("../fonts/brown.std.bold.otf"); }
+
+.cool { font: normal 12px "brownstdbold"; color: red; }
+.smile { font: normal 12px "brownstdbold"; color: blue; }

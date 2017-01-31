@@ -1,0 +1,9 @@
+html, body { width: 100%; height: 100%; }
+
+@font-face { font-family: "brownstdlight"; src: url("../fonts/brown.std.light.otf"); }
+@font-face { font-family: "brownstdreg"; src: url("../fonts/brown.std.regular.otf"); }
+@font-face { font-family: "brownstdbold"; src: url("../fonts/brown.std.bold.otf"); }
+
+h1 { font: normal 36px "brownstdbold"; }
+h2 { font: normal 26px "brownstdreg"; }
+h3 { font: normal 16px "brownstdlight"; }

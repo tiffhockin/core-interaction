@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example 01: Selectors</title>
+
+        <meta charset="utf-8">
+        
+        <link href='./css/reset.css' media='all' rel='stylesheet' type='text/css' />
+        <link href='./css/main.css' media='all' rel='stylesheet' type='text/css' />
+        
+        <script src='./js/jquery-2.1.1.min.js' type='text/javascript'></script>
+        <script src='./js/main.js' type='text/javascript'></script>
+    </head>
+    <body>
+
+        <!-- 
+
+        example of the how IDs differ from classes:
+        - ID is a unique identifier
+        - class is used to indicate a group of things which share one or more qualities
+
+        <student id="becca" class="tiff-core-interaction">
+            lots of ideas
+        </student>
+        
+        <student id="connie" class="tiff-core-interaction">
+            lots of ideas
+        </student> 
+
+        -->
+
+        <div id="wrapper">
+
+            <p id="par-1">#par-1 ------ Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+
+            <p id="par-2">#par-2 ------ Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris <span>This text is contained within a span which gets the "highlighted" class added on document.ready via jQuery</span> placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+
+            <p id="par-3">#par-3 ------ Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <span class="highlighted">This text is contained within a span with "highlighted" class. The "highlighted" class is baked into the HTML file.</span> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+
+            <p id="par-4">#par-4 ------ Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. <span>This text is contained within a span which gets the "highlighted" class added on document.ready via jQuery</span> Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+
+        </div>
+    </body>
+</html>

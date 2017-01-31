@@ -1,0 +1,25 @@
+html, body { width: 100%; }
+
+/* ttf, otf */
+@font-face { font-family: "avenirnextbold"; src: url("../fonts/avenir.next.bold.ttf"); }
+
+
+
+/* font: weight size family */
+/*
+	h1 {
+		font-weight: normal;
+		font-size: 36px;
+		font-family: "avenirnextbold";
+	}
+
+*/
+h1 { font: normal 36px "avenirnextbold"; text-align: center; }
+
+h2 { font: normal 20px "avenirnextbold"; text-align: center; }
+
+ul { width: 400px; margin: 0 auto; }
+
+ul li { list-style: none; text-align: center; }
+
+ul li img { height: 200px; }

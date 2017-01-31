@@ -1,0 +1,13 @@
+html, body { width: 100%; height: 100%; }
+
+@font-face { font-family: "avenirnextbold"; src: url("../fonts/avenir.next.bold.ttf"); }
+
+#wrapper { width: 500px; margin: 0 auto; padding-top: 30px; }
+
+.item { margin-bottom: 30px; }
+.item h1 { cursor: pointer; font: normal 20px "avenirnextbold"; margin-bottom: 10px; }
+
+.hover { position: relative; border: 1px solid black; }
+.hover img { display: none; position: absolute; top: -50px; left: -100px; }
+
+.hover:hover img { display: block; }

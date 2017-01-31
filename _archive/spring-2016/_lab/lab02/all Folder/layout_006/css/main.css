@@ -1,0 +1,52 @@
+/* GLOBAL */
+html, body { width: 100%; height: 100%; background-color: #FCEFC2;  }
+
+@font-face { font-family: "avenirnextbold"; src: url("../fonts/avenir.next.bold.ttf"); }
+
+/* WRAPPER */
+#wrapper { padding-top: 20px; }
+
+h1, h2 { font-family: "avenirnextbold"; font-weight: normal; text-align: center; }
+
+h1 { font-size: 36px; margin-bottom: 30px; }
+h2 { font-size: 20px; margin-bottom: 20px; }
+
+/* HEADER */
+#header { margin-bottom: 20px; }
+#header p { text-align: center; }
+#header a { font: normal 36px "avenirnextbold"; color: #719A72; }
+#header a:hover { text-decoration: underline; }
+
+/* MAIN */
+#main { margin-bottom: 50px; }
+
+ul { width: 420px; margin: 0 auto; }
+ul li { list-style: none; text-align: center; margin-bottom: 20px; }
+ul li .dog { width: 200px; float: left; margin-right: 20px; }
+ul li .dog.last { margin-right: 0; }
+
+ul li .dog-image {
+	width: 200px;
+	height: 200px;
+	border: 2px solid rgba( 0, 255, 0, .3);
+	background: url("") center center no-repeat;
+	background-size: cover;
+}
+
+ul li .dog:hover .dog-image {
+	border-color: black;
+	cursor: pointer;
+}
+
+ul li .dog p { color: black; }
+ul li .dog:hover p { color: green; }
+
+ul li .one { background-image: url("../img/img001.gif"); }
+ul li .two { background-image: url("../img/img002.gif"); }
+ul li .three { background-image: url("../img/img003.gif"); }
+ul li .four { background-image: url("../img/img004.gif"); }
+ul li p { text-align: center; font: normal 12px "avenirnextbold"; }
+
+/* FOOTER */
+#footer { padding-top: 30px; height: 20px; position: fixed; bottom: 0px; width: 100%; }
+#footer h1 { font-size: 10px; margin-bottom: 0; }

@@ -1,0 +1,49 @@
+html, body { width: 100%; height: 100%; }
+
+body {
+	font-size: 22px;
+	line-height: 1.15;
+}
+
+p {
+	margin: 0 auto 1em;
+	padding: 0 20%;
+}
+
+#hover-trigger { cursor: pointer; }
+
+#item-1 { background-color: red; }
+#item-2 { background-color: aqua; }
+
+.show { display: block; }
+.hide { display: none; }
+
+/* cascade styles based on body class */
+
+.reveal { background-color: yellow; }
+.reveal .show { display: none; }
+.reveal .hide { display: block; }
+.reveal #hover-trigger { 
+	background-color: white; 
+}
+
+.keypress { background-color: blue; }
+.keypress p { color: white; }
+
+.keyup { background-color: gold; }
+.keyup p { color: red; }
+
+.scroll { background-color: lime; }
+.scroll div { transform: rotate(-10deg); }
+
+.resize { background-color: pink; }
+.resize p { font-family: sans-serif; }
+
+
+
+
+
+
+
+
+

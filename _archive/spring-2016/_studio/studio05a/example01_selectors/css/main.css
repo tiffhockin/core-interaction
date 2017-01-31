@@ -1,0 +1,16 @@
+html, body { width: 100%; height: 100%; }
+
+p {
+	font-size: 22px;
+	line-height: 1.15;
+	margin-bottom: 1em;
+}
+
+#par-1 { color: red; }
+#par-2 { color: blue; }
+#par-3 { color: gold; }
+
+.highlighted { 
+	background-color: lime; 
+	color: black;
+}

@@ -1,0 +1,15 @@
+html, body { width: 100%; height: 100%; }
+body {
+	transition: background-color 1s;
+}
+
+@font-face { font-family: "brownstdlight"; src: url("../fonts/brown.std.light.otf"); }
+@font-face { font-family: "brownstdreg"; src: url("../fonts/brown.std.regular.otf"); }
+@font-face { font-family: "brownstdbold"; src: url("../fonts/brown.std.bold.otf"); }
+
+#wrapper { width: 500px; margin: 0 auto; padding-top: 30px; }
+
+span.one, span.two {
+	border: 2px solid black;
+	font: normal 20px "brownstdreg";
+}
