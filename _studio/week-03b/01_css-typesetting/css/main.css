@@ -1,0 +1,50 @@
+/* global type styles */
+body {
+	font-weight: normal;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 1.3;
+	letter-spacing: 0.05em;
+	text-rendering: optimizeLegibility; /* improves optical kerning */
+}
+
+p {
+	margin: 0;
+	margin-bottom: 1em;
+}
+
+hr	{
+	border: none; /* reset */
+	border-top: solid 1px;
+}
+
+
+/* using classes to create paragraph styles */
+
+.align-center { text-align: center; }
+
+.align-right { text-align: right; }
+
+.indented { text-indent: 2em; }
+
+.call {
+	padding-right: 20%;
+	text-align: left; /* this is redundant. by default, all text is left-aligned */
+}
+
+.response {
+	padding-left: 20%;
+	text-align: right;
+}
+
+
+/* using classes to create character styles */
+
+.small-caps { 
+	text-transform: uppercase; 
+	font-size: 0.75em;
+}
+.tracked-out { letter-spacing: 0.5em; }
+.highlighted { background: yellow; }
+.sans-serif { font-family: cursive; }
+

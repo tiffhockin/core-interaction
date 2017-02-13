@@ -1,0 +1,55 @@
+* { box-sizing: border-box; }
+
+/* global type styles */
+body {
+	font-weight: normal;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 1.3;
+	letter-spacing: 0.05em;
+	text-rendering: optimizeLegibility; /* improves optical kerning */
+}
+
+p {
+	margin: 0;
+	margin-bottom: 1em;
+}
+
+hr	{
+	border: none; /* reset */
+	border-top: solid 1px;
+}
+
+.wrapper { 
+	width: 90%; /* using a percent-based width will allow your content to flex with the browser */
+	max-width: 650px; /* set a max-width that feels appropriate to the font size */
+	margin-left: auto; margin-right: auto; /* setting L & R margins to `auto` will let the browser center the .wrapper element within the viewport */
+}
+
+
+/* using classes to create paragraph styles */
+
+.align-center { text-align: center; }
+
+.align-right { text-align: right; }
+
+.indented { text-indent: 2em; }
+
+.call {
+	padding-right: 20%;
+	text-align: left; /* this is redundant. by default, all text is left-aligned */
+}
+
+.response {
+	padding-left: 20%;
+	text-align: right;
+}
+
+
+
+
+
+
+
+
+

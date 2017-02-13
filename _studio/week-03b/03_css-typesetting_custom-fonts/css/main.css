@@ -1,0 +1,44 @@
+/* import custom fonts. make sure your fonts are either .ttf or .otf format */
+@font-face { 
+	font-family: "AntiqueOlive"; 
+	src: url("../fonts/AntiqueOliveStd-Roman.otf");
+}
+
+@font-face { 
+	font-family: "AntiqueOlive-Black"; 
+	src: url("../fonts/AntiqueOliveStd-Black.otf");
+}
+
+@font-face { 
+	font-family: "Pilgi"; 
+	src: url("../fonts/Pilgiche.ttf");
+}
+
+/* global type styles */
+body {
+	font-family: "AntiqueOlive";
+	font-weight: normal;
+	font-style: normal;
+	font-size: 18px;
+	/* you'll need to adjust line-height and letter-spacing depending on the typeface you use '*/
+	line-height: 1.5;
+	letter-spacing: 0.08em; 
+	text-rendering: optimizeLegibility; /* improves optical kerning */
+}
+
+/* prevent the browser from adding faux bold and italics */
+h1, h2, h3, h4, h5, h6, strong, em { 
+	font-weight: normal; 
+	font-style: normal;
+}
+
+/* specify our own font files for these tags */
+h1, h2, h3, h4, h5, h6, strong { font-family: "AntiqueOlive-Black"; }
+
+/* if you're mixing typefaces, you may need to adjust for different proportions */
+em { 
+	font-family: "Pilgi"; 
+}
+
+
+
